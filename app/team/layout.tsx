@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({weight: "400", style: "normal"});
 
 export const metadata: Metadata = {
-  title: "ShodhLab - A platform for research and development"
+  title: "ShodhLab - Team"
 };
 
 export default function RootLayout({
