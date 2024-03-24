@@ -23,7 +23,7 @@ export default function Home() {
                 className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="#"
               >
-                Contact us
+                {data.button1}
                 <svg
                   className="flex-shrink-0 size-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export default function Home() {
                 className="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                 href="#"
               >
-                Collaborate
+                {data.button2}
               </a>
             </div>
             {/* End Buttons */}
