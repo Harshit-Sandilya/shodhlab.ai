@@ -1,8 +1,11 @@
 import Image from "next/image";
 import data from "../data/home.json"
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
+    <>
+    <Navbar />
     <div className="h-screen w-screen items-center justify-center flex">
       {/* Hero */}
       <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,5 +65,6 @@ export default function Home() {
       </div>
       {/* End Hero */}
     </div>
+    </>
   );
 }

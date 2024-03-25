@@ -1,0 +1,11 @@
+{
+  "imageURL": "/logo-name.png",
+  "imageWidth": 960,
+  "imageHeight": 540,
+  "imageAlt": "Shodh Lab",
+  "links": [
+    { "name": "Blogs", "link": "/blogs", "id": "blogs-nav" },
+    { "name": "Careers", "link": "/careers", "id": "careers-nav" },
+    { "name": "Models", "link": "/models", "id": "models-nav" }
+  ]
+}
