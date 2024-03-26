@@ -1,0 +1,21 @@
+{
+    "Heading": "This is a heading",
+    "Text": "This is some text",
+    "blogs":[
+        {
+            "id": 1,
+            "Title": "Blog 1",
+            "Content": "This is the content of blog 1"
+        },
+        {
+            "id": 2,
+            "Title": "Blog 2",
+            "Content": "This is the content of blog 2"
+        },
+        {
+            "id": 3,
+            "Title": "Blog 3",
+            "Content": "This is the content of blog 3"
+        }
+    ]
+}

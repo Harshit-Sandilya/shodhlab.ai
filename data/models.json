@@ -1,0 +1,48 @@
+{
+  "heading": "Explore the existing projects",
+  "models": [
+    {
+      "id": 1,
+      "name": "Alpha",
+      "description": "Our first 3B model",
+      "pageHead": "Introducing Alpha",
+      "pageSubHead": "Our first ever 3B SOTA model, Alpha, is now available",
+      "features": [
+        {
+          "id": 1,
+          "head": "3B parameters",
+          "svg": "",
+          "description": "Alpha is a 3B parameter model, trained on a large scale dataset",
+          "image": "",
+          "imageAlt": "3B image",
+          "imageHeight": 200,
+          "imageWidth": 200
+        },
+        {
+          "id": 2,
+          "head": "3B parameters",
+          "svg": "",
+          "description": "Alpha is a 3B parameter model, trained on a large scale dataset",
+          "image": "",
+          "imageAlt": "3B image",
+          "imageHeight": 200,
+          "imageWidth": 200
+        }
+      ],
+      "chat": [
+        {
+          "from": "model",
+          "text": "Hello, I am Alpha, a 3B model. I am trained on a large scale dataset and can perform a variety of tasks."
+        },
+        {
+          "from": "user",
+          "text": "What tasks can you perform?"
+        },
+        {
+          "from": "model",
+          "text": "I can perform a variety of tasks, including text generation, summarization, translation, and more."
+        }
+      ]
+    }
+  ]
+}

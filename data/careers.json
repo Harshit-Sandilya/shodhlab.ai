@@ -1,0 +1,59 @@
+{
+  "head": "Work with us",
+  "imageURL": "/logo-name.png",
+  "imageWidth": 960,
+  "imageHeight": 540,
+  "imageAlt": "Shodh Lab",
+  "applicationSections": [
+    {
+      "name": "Personal Information"
+    },
+    {
+      "name": "Education"
+    },
+    {
+      "name": "Experience"
+    },
+    {
+      "name": "Skills"
+    },
+    {
+      "name": "Documents"
+    },
+    {
+      "name": "Additional Information"
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Product Engineer",
+      "location": "Remote",
+      "description": "Design, develop, and test user-facing features for our product."
+    },
+    {
+      "id": 2,
+      "title": "Software Developer",
+      "location": "Remote",
+      "description": "Develop and maintain backend systems for our platform."
+    },
+    {
+      "id": 3,
+      "title": "UI/UX Designer",
+      "location": "Remote",
+      "description": "Design user interfaces and user experiences for our products."
+    },
+    {
+      "id": 4,
+      "title": "Marketing Manager",
+      "location": "Remote",
+      "description": "Develop and execute marketing campaigns to drive brand awareness and user growth."
+    },
+    {
+      "id": 5,
+      "title": "Customer Support Specialist",
+      "location": "Remote",
+      "description": "Provide customer support and troubleshoot issues for our users."
+    }
+  ]
+}

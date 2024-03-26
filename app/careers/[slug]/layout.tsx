@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import "@/app/globals.css";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({weight: "400", style: "normal", subsets: ["latin"]});
+
+export const metadata: Metadata = {
+  title: "ShodhLab - Careers"
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={poppins.className}>{children}</body>
+    </html>
+  );
+}
