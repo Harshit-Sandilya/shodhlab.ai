@@ -5,7 +5,11 @@ import { Poppins } from 'next/font/google';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-const poppins = Poppins({ weight: '400', style: 'normal', subsets: ['latin'] });
+const poppins = Poppins({
+	weight: ['400', '500'],
+	style: 'normal',
+	subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
 	title: 'ShodhLab - A platform for research and development',
