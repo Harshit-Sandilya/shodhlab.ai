@@ -1,8 +1,7 @@
 'use server';
 
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
-
-import { firestoreDb } from '@/lib/firebase';
+import { firestoreDb } from 'lib/firebase';
 
 type TConactFormItems = {
 	name: string;
