@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 const poppins = Poppins({
-	weight: ['400', '500'],
+	weight: ['300', '400', '500'],
 	style: 'normal',
 	subsets: ['latin'],
 });
