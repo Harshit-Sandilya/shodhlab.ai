@@ -28,6 +28,7 @@
     "firebase": "^10.11.0",
     "formik": "^2.4.5",
     "next": "latest",
+    "nodemailer": "^6.9.13",
     "react": "latest",
     "react-dom": "latest"
   }
