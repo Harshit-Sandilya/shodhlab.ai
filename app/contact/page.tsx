@@ -1,13 +1,30 @@
+'use client';
 // TODO: Separate out cards into their own reusable component.
 // TODO: Handle focus and active states for input fields and submit button.
+// TODO: Display error messages and add schema validation to formik.
+// TODO: Add captcha to prevent spam.
 
+import { useFormik } from 'formik';
 import Link from 'next/link';
 
 import { IconArrowUpRight, IconMailFilled } from '@tabler/icons-react';
 
 import { submitContactForm } from './actions';
 
+import type { TConactFormItems } from './actions';
+
 export default function Page() {
+	const formik = useFormik({
+		initialValues: {
+			name: '',
+			email: '',
+			message: '',
+		},
+		onSubmit: (values) => {
+			submitContactForm(values as TConactFormItems);
+		},
+	});
+
 	return (
 		<div className='w-full min-h-screen bg-black'>
 			<div className='container flex flex-col justify-center w-3/4 gap-8 p-4 pt-24 mx-auto lg:w-2/3'>
@@ -64,7 +81,7 @@ export default function Page() {
 						</p>
 
 						<form
-							action=''
+							onSubmit={formik.handleSubmit}
 							className='flex flex-col px-4 text-sm font-light'
 						>
 							<label
@@ -75,9 +92,11 @@ export default function Page() {
 							</label>
 							<input
 								type='text'
-								name='full_name'
-								id='full_name'
+								name='name'
 								placeholder='John Doe'
+								value={formik.values.name}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>
 
@@ -90,7 +109,9 @@ export default function Page() {
 							<input
 								type='text'
 								name='email'
-								id='email'
+								value={formik.values.email}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								placeholder='john.doe@example.com'
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>
@@ -104,7 +125,9 @@ export default function Page() {
 							<textarea
 								rows={4}
 								name='message'
-								id='message'
+								value={formik.values.message}
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
 								placeholder='I am interested in shodh.ai for my team and I would like to learn more about...'
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>

@@ -3,23 +3,23 @@
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { firestoreDb } from 'lib/firebase';
 
-type TConactFormItems = {
+export type TConactFormItems = {
 	name: string;
 	email: string;
-	comment: string;
+	message: string;
 };
 
 export const submitContactForm = async ({
 	name,
 	email,
-	comment,
+	message,
 }: TConactFormItems) => {
 	try {
 		const ref = collection(firestoreDb, 'contact_form_submissions');
 		await addDoc(ref, {
 			name,
 			email,
-			comment,
+			message,
 			submittedAt: Timestamp.now().toDate(),
 		});
 	} catch (err) {
