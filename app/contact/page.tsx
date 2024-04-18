@@ -27,20 +27,20 @@ export default function Page() {
 
 	return (
 		<div className='w-full min-h-screen bg-black'>
-			<div className='container flex flex-col justify-center w-3/4 gap-8 p-4 pt-24 mx-auto lg:w-2/3'>
-				<h1 className='inline-block text-6xl leading-snug font-medium text-center text-transparent bg-gradient-to-br from-white to-[rgba(255, 255, 255, 0.38)] from-30% bg-clip-text text-balance'>
+			<div className='container flex flex-col justify-center w-full gap-6 p-4 pt-24 mx-auto item-center lg:w-2/3'>
+				<h1 className='inline-block text-4xl lg:text-6xl lg:leading-snug font-medium text-center text-transparent bg-gradient-to-br from-white to-[rgba(255, 255, 255, 0.38)] from-30% bg-clip-text text-balance'>
 					How can we help?
 				</h1>
 
-				<h3 className='text-xl text-center text-gray-400 text-balance'>
+				<h3 className='text-sm w-full lg:text-xl text-center text-gray-400 text-balance mx-auto lg:max-w-[45ch]'>
 					Get in touch with our sales and support teams for demos,
 					onboarding support, or product questions.
 				</h3>
 
-				<div className='grid gap-4 my-16 lg:grid-cols-2'>
+				<div className='grid gap-4 my-8 lg:my-16 lg:grid-cols-2'>
 					<div className='flex flex-col gap-4'>
 						{/* Cards */}
-						<div className='flex flex-col gap-2 mb-6'>
+						<div className='flex flex-col gap-2 mb-4'>
 							<p className='text-lg text-white'>
 								Join the community
 							</p>
@@ -57,7 +57,7 @@ export default function Page() {
 							</Link>
 						</div>
 
-						<div className='flex flex-col gap-2 mt-6'>
+						<div className='flex flex-col gap-2 mt-4'>
 							<p className='text-lg text-white'>
 								Join the community
 							</p>
@@ -75,8 +75,8 @@ export default function Page() {
 						</div>
 					</div>
 
-					<div className='flex flex-col gap-4 border rounded-lg border-neutral-700 bg-neutral-900'>
-						<p className='p-4 text-sm text-white border-b border-neutral-700'>
+					<div className='flex flex-col gap-4 my-4 border rounded-lg lg:my-0 border-neutral-700 bg-neutral-900'>
+						<p className='p-4 text-white border-b border-neutral-700'>
 							Tell us how we can help
 						</p>
 
@@ -142,7 +142,7 @@ export default function Page() {
 
 								<button
 									type='submit'
-									className='px-4 py-2 text-xs border rounded-full border-neutral-700 text-neutral-300'
+									className='w-1/2 px-6 py-3 text-xs border rounded-full lg:w-auto border-neutral-700 text-neutral-300'
 								>
 									Send Message
 								</button>
