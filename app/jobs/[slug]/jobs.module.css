@@ -1,0 +1,30 @@
+.markdown {
+	color: white;
+}
+
+.markdown h2 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.markdown p {
+	font-size: 1rem;
+	opacity: 0.75;
+	margin-bottom: 2.25rem;
+	line-height: 160%;
+}
+
+.markdown ul {
+	list-style-type: disc;
+	opacity: 75%;
+	margin-bottom: 2.25rem;
+}
+
+.markdown strong {
+	opacity: 1;
+}
+
+.markdown strong::before {
+	content: '\a';
+	white-space: pre;
+}
