@@ -28,9 +28,12 @@
     "@tabler/icons-react": "^3.2.0",
     "firebase": "^10.11.0",
     "formik": "^2.4.5",
+    "gray-matter": "^4.0.3",
     "next": "latest",
     "nodemailer": "^6.9.13",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1"
   }
 }
