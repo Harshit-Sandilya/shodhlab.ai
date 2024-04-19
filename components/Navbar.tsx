@@ -1,5 +1,4 @@
 // TODO: Hamburger menu for smaller screens.
-// TODO: Fix aspect ratio for logo.
 
 import Image from 'next/image';
 import Link from 'next/link';

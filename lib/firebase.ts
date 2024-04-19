@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
 	appId: process.env.FIREBASE_APP_ID,
@@ -12,5 +13,6 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const firestoreDb = getFirestore(firebaseApp);
+const firebaseStorage = getStorage();
 
-export { firebaseApp, firestoreDb };
+export { firebaseApp, firestoreDb, firebaseStorage };
