@@ -24,7 +24,7 @@ const HamburgerIcon = () => {
 
 const Navbar = () => {
 	return (
-		<div className='fixed top-0 w-full p-4 bg-black border-b border-gray-900 shadow-sm bg-opacity-60 bg-clip-padding backdrop-blur max-h-20'>
+		<div className='fixed top-0 z-50 w-full p-4 bg-black border-b border-gray-900 shadow-sm bg-opacity-60 bg-clip-padding backdrop-blur max-h-20'>
 			<div className='container flex items-center justify-between mx-auto text-sm'>
 				<div className='flex items-center gap-10'>
 					<Link href='/'>
