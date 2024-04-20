@@ -56,41 +56,50 @@ export const getJobData = async (slug: string): Promise<TReturnType> => {
 	let jobInfo = querySnapshot.docs[0]?.data();
 
 	if (jobInfo) {
-		console.log(jobInfo.file);
-		return getDownloadURL(ref(firebaseStorage, jobInfo.file))
-			.then(async (url) => {
-				console.log(url);
-				const res = await fetch(url);
+		try {
+			const url = await getDownloadURL(
+				ref(firebaseStorage, jobInfo.file)
+			);
 
-				if (!res.ok) throw new Error('Failed to fetch Job Description');
-
-				const fileContent = await res.text();
-
-				const matterResult = matter(fileContent);
-				const processedContent = remark()
-					.use(html)
-					.process(matterResult.content);
-
+			if (!url) {
 				return {
-					status: 'ok',
-					data: {
-						title: jobInfo.title as string,
-						contentHtml: (await processedContent).toString(),
-					},
-				};
-			})
-			.catch((err) => {
-				console.error(`${err}`);
-
-				return {
-					status: 'error',
+					status: 'document_not_found',
 					data: null,
 				};
-			});
+			}
+
+			const res = await fetch(url);
+
+			if (!res.ok) throw new Error('Failed to fetch Job Description');
+
+			const fileContent = await res.text();
+
+			const matterResult = matter(fileContent);
+			const processedContent = remark()
+				.use(html)
+				.process(matterResult.content);
+
+			return {
+				status: 'ok',
+				data: {
+					title: jobInfo.title as string,
+					contentHtml: (await processedContent).toString(),
+				},
+			};
+		} catch (err) {
+			console.error(
+				`Error while fetching Job Info. Error details: ${err}`
+			);
+
+			return {
+				status: 'error',
+				data: null,
+			};
+		}
 	}
 
 	return {
-		status: 'document_not_found',
+		status: 'error',
 		data: null,
 	};
 };
