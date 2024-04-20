@@ -1,7 +1,17 @@
-import { collection, getDocs, query, where } from 'firebase/firestore';
+'use server';
+
+import {
+	addDoc,
+	collection,
+	getDocs,
+	query,
+	Timestamp,
+	where,
+} from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
 import matter from 'gray-matter';
 import { firebaseStorage, firestoreDb } from 'lib/firebase';
+import { TJobFormValues } from 'lib/types';
 import { remark } from 'remark';
 import html from 'remark-html';
 
@@ -11,6 +21,30 @@ type TReturnType = {
 		title: string;
 		contentHtml: string;
 	} | null;
+};
+
+export const submitJobApplication = async ({
+	role,
+	name,
+	description,
+	projects,
+	linkedin,
+}: TJobFormValues) => {
+	try {
+		const ref = collection(firestoreDb, 'job_applications');
+		await addDoc(ref, {
+			role,
+			name,
+			description,
+			projects,
+			linkedin,
+			submittedAt: Timestamp.now().toDate(),
+		});
+	} catch (err) {
+		console.error(
+			`Failed to add form submission to Firebase. Error details: ${err}`
+		);
+	}
 };
 
 export const getJobData = async (slug: string): Promise<TReturnType> => {
