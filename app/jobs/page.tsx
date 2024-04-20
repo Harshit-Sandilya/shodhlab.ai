@@ -14,8 +14,8 @@ export default async function Page() {
 			</div>
 
 			<div className='container flex flex-col w-3/4 gap-4 mx-auto lg:w-2/3'>
-				{jobsList.map((job) => (
-					<JobCard job={job} />
+				{jobsList.map((job, i) => (
+					<JobCard job={job} key={i} />
 				))}
 			</div>
 		</div>
