@@ -20,8 +20,9 @@ const JobForm: FC<IProps> = ({ role }) => {
 			linkedin: '',
 		},
 		onSubmit: (values) => {
+			if (isDisabled) return;
+
 			setDisabled(true);
-			// submitAction(values);
 			submitJobApplication(values);
 		},
 	});
@@ -93,7 +94,7 @@ const JobForm: FC<IProps> = ({ role }) => {
 				<div className='flex items-center justify-end my-4'>
 					<button
 						type='submit'
-						className='w-1/2 px-6 py-3 text-xs border rounded-full lg:w-auto border-neutral-700 text-neutral-300'
+						className='w-1/2 px-6 py-3 text-xs border rounded-full lg:w-auto border-neutral-700 text-neutral-300 hover:text-white hover:bg-gradient-to-b from-blue-500 to-blue-600'
 						disabled={isDisabled}
 					>
 						Apply Now
