@@ -4,7 +4,6 @@
 
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { firestoreDb } from 'lib/firebase';
-import { sendEmail } from 'lib/nodemailer';
 
 import type { TContactFormItems } from 'lib/types';
 
@@ -26,12 +25,4 @@ export const submitContactForm = async ({
 			`Failed to add form submission to Firebase. Error details: ${err}`
 		);
 	}
-
-	// try {
-	// 	sendEmail(email, 'shodh.ai: New Contact form submission!', message);
-	// } catch (err) {
-	// 	console.error(
-	// 		`Failed to send an email for conact form submission. Error details: ${err}`
-	// 	);
-	// }
 };
