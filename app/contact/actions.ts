@@ -27,11 +27,11 @@ export const submitContactForm = async ({
 		);
 	}
 
-	try {
-		sendEmail(email, 'shodh.ai: New Contact form submission!', message);
-	} catch (err) {
-		console.error(
-			`Failed to send an email for conact form submission. Error details: ${err}`
-		);
-	}
+	// try {
+	// 	sendEmail(email, 'shodh.ai: New Contact form submission!', message);
+	// } catch (err) {
+	// 	console.error(
+	// 		`Failed to send an email for conact form submission. Error details: ${err}`
+	// 	);
+	// }
 };
