@@ -1,6 +1,6 @@
 import '@/app/global.css';
 
-import { Navbar } from 'components';
+import { Footer, Navbar } from 'components';
 import { Poppins } from 'next/font/google';
 
 import type { Metadata } from 'next';
@@ -28,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 			<body className={poppins.className}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
