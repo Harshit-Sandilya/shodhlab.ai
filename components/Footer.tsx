@@ -26,7 +26,7 @@ const Footer = () => {
 						Reserved.
 					</p>
 				</div>
-				<nav className='flex justify-around gap-4 text-white lg:flex-col text-medium'>
+				<nav className='flex justify-around gap-4 text-white lg:justify-start lg:flex-col text-medium'>
 					<Link href='/'>Home</Link>
 					<Link href='/jobs'>Careers</Link>
 					<Link href='/contact'>Contact</Link>
