@@ -3,8 +3,6 @@ import { JobForm } from 'components';
 import { getJobData } from './actions';
 import styles from './jobs.module.css';
 
-export const runtime = 'edge';
-
 export default async function Page({
 	params: { slug },
 }: {
