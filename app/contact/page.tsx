@@ -2,10 +2,10 @@
 // TODO: Separate out cards into their own reusable component.
 // TODO: Handle focus and active states for input fields and submit button.
 // TODO: Display error messages and add schema validation to formik.
-// TODO: Add captcha to prevent spam.
 
 import { useFormik } from 'formik';
 import Link from 'next/link';
+import { useState } from 'react';
 
 import { IconArrowUpRight, IconMailFilled } from '@tabler/icons-react';
 
@@ -21,9 +21,14 @@ export default function Page() {
 			message: '',
 		},
 		onSubmit: (values) => {
-			submitContactForm(values as TContactFormItems);
+			setDisabled(true);
+			submitContactForm(values);
+			setSubmitted(true);
 		},
 	});
+
+	const [isDisabled, setDisabled] = useState<boolean>(false);
+	const [submitted, setSubmitted] = useState<boolean>(false);
 
 	return (
 		<div className='w-full min-h-screen bg-black'>
@@ -80,6 +85,12 @@ export default function Page() {
 							Tell us how we can help
 						</p>
 
+						{submitted && (
+							<p className='mx-4 text-green-400'>
+								Contact request successfully submitted!
+							</p>
+						)}
+
 						<form
 							onSubmit={formik.handleSubmit}
 							className='flex flex-col px-4 text-sm font-light'
@@ -97,6 +108,7 @@ export default function Page() {
 								value={formik.values.name}
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
+								required
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>
 
@@ -107,12 +119,13 @@ export default function Page() {
 								Work Email
 							</label>
 							<input
-								type='text'
+								type='email'
 								name='email'
 								value={formik.values.email}
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
 								placeholder='john.doe@example.com'
+								required
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>
 
@@ -129,6 +142,7 @@ export default function Page() {
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
 								placeholder='I am interested in shodh.ai for my team and I would like to learn more about...'
+								required
 								className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 							/>
 
@@ -142,7 +156,8 @@ export default function Page() {
 
 								<button
 									type='submit'
-									className='w-1/2 px-6 py-3 text-xs border rounded-full lg:w-auto border-neutral-700 text-neutral-300 hover:text-white hover:bg-gradient-to-b from-blue-500 to-blue-600'
+									className='w-1/2 px-6 py-3 text-xs border rounded-full lg:w-auto border-neutral-700 text-neutral-300 disabled:bg-neutral-800 hover:text-white hover:bg-gradient-to-b from-blue-500 to-blue-600'
+									disabled={isDisabled}
 								>
 									Send Message
 								</button>
