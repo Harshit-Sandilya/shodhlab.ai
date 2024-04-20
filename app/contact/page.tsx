@@ -11,17 +11,17 @@ import { IconArrowUpRight, IconMailFilled } from '@tabler/icons-react';
 
 import { submitContactForm } from './actions';
 
-import type { TConactFormItems } from './actions';
+import type { TContactFormItems } from 'lib/types';
 
 export default function Page() {
-	const formik = useFormik({
+	const formik = useFormik<TContactFormItems>({
 		initialValues: {
 			name: '',
 			email: '',
 			message: '',
 		},
 		onSubmit: (values) => {
-			submitContactForm(values as TConactFormItems);
+			submitContactForm(values as TContactFormItems);
 		},
 	});
 

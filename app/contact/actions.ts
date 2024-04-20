@@ -6,17 +6,13 @@ import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { firestoreDb } from 'lib/firebase';
 import { sendEmail } from 'lib/nodemailer';
 
-export type TConactFormItems = {
-	name: string;
-	email: string;
-	message: string;
-};
+import type { TContactFormItems } from 'lib/types';
 
 export const submitContactForm = async ({
 	name,
 	email,
 	message,
-}: TConactFormItems) => {
+}: TContactFormItems) => {
 	try {
 		const ref = collection(firestoreDb, 'contact_form_submissions');
 		await addDoc(ref, {
