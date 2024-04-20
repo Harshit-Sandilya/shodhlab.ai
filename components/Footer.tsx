@@ -4,8 +4,8 @@ import Link from 'next/link';
 const Footer = () => {
 	return (
 		<div className='w-full px-4 py-16 bg-black border-t border-gray-900 shadow-sm'>
-			<div className='container flex justify-between mx-auto'>
-				<div className='flex flex-col gap-4'>
+			<div className='container flex flex-col-reverse justify-between gap-16 mx-auto lg:flex-row'>
+				<div className='flex flex-col items-center gap-4 lg:items-start'>
 					<Link href='/'>
 						<Image
 							src='/logo-name.png'
@@ -15,18 +15,18 @@ const Footer = () => {
 						/>
 					</Link>
 
-					<p className='text-sm text-white'>
+					<p className='text-sm text-center text-white lg:text-left'>
 						<span>Crafting AI-Driven</span>
 						<br />
 						<span>Solutions for Tomorrow</span>
 					</p>
 
-					<p className='mt-16 text-neutral-700'>
+					<p className='lg:mt-16 text-neutral-700'>
 						&copy; {new Date().getFullYear()} Shodh.AI. All Rights
 						Reserved.
 					</p>
 				</div>
-				<nav className='flex flex-col gap-4 text-white text-medium'>
+				<nav className='flex justify-around gap-4 text-white lg:flex-col text-medium'>
 					<Link href='/'>Home</Link>
 					<Link href='/jobs'>Careers</Link>
 					<Link href='/contact'>Contact</Link>
