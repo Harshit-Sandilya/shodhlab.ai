@@ -27,24 +27,24 @@ const Navbar = () => {
 					</Link>
 
 					<nav className='items-center hidden gap-8 lg:flex'>
-						<Link
+						{/* <Link
 							href='/blog'
 							className='text-gray-300 hover:text-white'
 						>
 							Blog
-						</Link>
+						</Link> */}
 						<Link
 							href='/jobs'
 							className='text-gray-300 hover:text-white'
 						>
 							Careers
 						</Link>
-						<Link
+						{/* <Link
 							href='/models'
 							className='text-gray-300 hover:text-white'
 						>
 							Models
-						</Link>
+						</Link> */}
 					</nav>
 				</div>
 
