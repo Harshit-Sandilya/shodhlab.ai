@@ -13,7 +13,7 @@ const JobCard: FC<DocumentData> = ({ job: { title, location, slug } }) => {
 			</div>
 
 			<Link
-				href={`jobs/${slug}`}
+				href={`/jobs/${slug}`}
 				className='blocpx-6 lg:px-8 py-[9px] lg:py-3 text-sm lg:text-base text-white transition duration-200 rounded-full border border-white hover:shadow-xl text-center hover:bg-white hover:text-black'
 			>
 				Apply Now
