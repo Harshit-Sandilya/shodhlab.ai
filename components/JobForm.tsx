@@ -1,6 +1,6 @@
 'use client';
 
-import { submitJobApplication } from 'app/jobs/[slug]/actions';
+import { submitJobApplication } from 'app/jobs/ml-app/actions';
 import { useFormik } from 'formik';
 import { TJobFormValues } from 'lib/types';
 import { FC, useState } from 'react';
