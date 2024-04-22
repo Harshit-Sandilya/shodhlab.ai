@@ -106,7 +106,6 @@ const JobForm: FC<IProps> = ({ role }) => {
 						value={formik.values.linkedin}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
-						pattern='^www\.linkedin\.com\/'
 						required
 						placeholder='https://www.linkedin.com/company/shodhlab/about/'
 						className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
