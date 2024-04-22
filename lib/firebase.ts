@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { initializeFirestore } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
@@ -12,9 +12,7 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const firestoreDb = initializeFirestore(firebaseApp, {
-	experimentalForceLongPolling: true,
-});
+const firestoreDb = getFirestore(firebaseApp);
 const firebaseStorage = getStorage(firebaseApp);
 
 export { firebaseApp, firestoreDb, firebaseStorage };
