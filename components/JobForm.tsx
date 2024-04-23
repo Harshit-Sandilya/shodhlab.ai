@@ -72,11 +72,11 @@ const JobForm: FC<IProps> = ({ role }) => {
 					</label>
 					<textarea
 						rows={4}
+						name='description'
 						value={formik.values.description}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						required
-						placeholder='I am interested in shodh.ai for my team and I would like to learn more about...'
 						className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
 					/>
 
