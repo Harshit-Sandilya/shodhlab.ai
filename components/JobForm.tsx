@@ -2,8 +2,10 @@
 
 import { submitJobApplication } from 'app/jobs/ml-app/actions';
 import { useFormik } from 'formik';
-import { TJobFormValues } from 'lib/types';
-import { FC, useState } from 'react';
+import { useState } from 'react';
+
+import type { TJobFormValues } from 'lib/types';
+import type { FC } from 'react';
 
 interface IProps {
 	role: string;
@@ -17,6 +19,8 @@ const JobForm: FC<IProps> = ({ role }) => {
 			description: '',
 			projects: '',
 			linkedin: '',
+			university: '',
+			course: ''
 		},
 		onSubmit: (values) => {
 			if (isDisabled) return;
@@ -101,6 +105,32 @@ const JobForm: FC<IProps> = ({ role }) => {
 						type='text'
 						name='linkedin'
 						value={formik.values.linkedin}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						required
+						className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
+					/>
+
+					<label htmlFor='university' className='my-2 text-neutral-500'>
+						University
+					</label>
+					<input
+						type='text'
+						name='university'
+						value={formik.values.university}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						required
+						className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
+					/>
+
+					<label htmlFor='course' className='my-2 text-neutral-500'>
+						Course
+					</label>
+					<input
+						type='text'
+						name='course'
+						value={formik.values.course}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						required

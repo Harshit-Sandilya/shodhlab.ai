@@ -1,20 +1,13 @@
 'use server';
 
-import {
-	addDoc,
-	collection,
-	getDocs,
-	query,
-	Timestamp,
-	where,
-} from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, Timestamp, where } from 'firebase/firestore';
 import { getDownloadURL, ref } from 'firebase/storage';
 import matter from 'gray-matter';
 import { firebaseStorage, firestoreDb } from 'lib/firebase';
-import { TJobFormValues } from 'lib/types';
 import { remark } from 'remark';
 import html from 'remark-html';
 
+import type { TJobFormValues } from 'lib/types';
 type TReturnType = {
 	status: 'ok' | 'error' | 'document_not_found';
 	data: {
@@ -29,6 +22,8 @@ export const submitJobApplication = async ({
 	description,
 	projects,
 	linkedin,
+	university,
+	course
 }: TJobFormValues) => {
 	try {
 		const ref = collection(firestoreDb, 'job_applications');
@@ -38,6 +33,8 @@ export const submitJobApplication = async ({
 			description,
 			projects,
 			linkedin,
+			university,
+			course,
 			submittedAt: Timestamp.now().toDate(),
 		});
 	} catch (err) {
@@ -53,7 +50,7 @@ export const getJobData = async (slug: string): Promise<TReturnType> => {
 
 	const querySnapshot = await getDocs(q);
 
-	let jobInfo = querySnapshot.docs[0]?.data();
+	const jobInfo = querySnapshot.docs[0]?.data();
 
 	if (jobInfo) {
 		try {

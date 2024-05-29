@@ -4,6 +4,8 @@ export type TJobFormValues = {
 	description: string;
 	projects: string;
 	linkedin: string;
+	university: string;
+	course: string;
 };
 
 export type TContactFormItems = {
