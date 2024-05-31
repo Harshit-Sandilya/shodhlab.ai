@@ -1,6 +1,7 @@
 export type TJobFormValues = {
 	role: string;
 	name: string;
+	email: string;
 	description: string;
 	projects: string;
 	linkedin: string;

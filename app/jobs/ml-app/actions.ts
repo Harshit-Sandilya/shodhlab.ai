@@ -19,6 +19,7 @@ type TReturnType = {
 export const submitJobApplication = async ({
 	role,
 	name,
+	email,
 	description,
 	projects,
 	linkedin,
@@ -30,6 +31,7 @@ export const submitJobApplication = async ({
 		await addDoc(ref, {
 			role,
 			name,
+			email,
 			description,
 			projects,
 			linkedin,

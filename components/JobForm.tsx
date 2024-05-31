@@ -16,6 +16,7 @@ const JobForm: FC<IProps> = ({ role }) => {
 		initialValues: {
 			role,
 			name: '',
+			email: '',
 			description: '',
 			projects: '',
 			linkedin: '',
@@ -62,6 +63,22 @@ const JobForm: FC<IProps> = ({ role }) => {
 						type='text'
 						name='name'
 						value={formik.values.name}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						required
+						className='p-2 mb-4 border rounded border-neutral-700 bg-neutral-800 text-neutral-300'
+					/>
+
+					<label
+						htmlFor='email'
+						className='my-2 text-neutral-500'
+					>
+						E-mail Address
+					</label>
+					<input
+						type='email'
+						name='email'
+						value={formik.values.email}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						required
