@@ -8,7 +8,7 @@ const Footer = () => {
 				<div className='flex flex-col items-center gap-4 lg:items-start'>
 					<Link href='/'>
 						<Image
-							src='/logo-name.png'
+							src='/logo.jpg'
 							alt='shodhLab Text Logo'
 							width={150}
 							height={48}

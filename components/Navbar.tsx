@@ -19,7 +19,7 @@ const Navbar = () => {
 				<div className='flex items-center gap-10'>
 					<Link href='/'>
 						<Image
-							src='/logo-name.png'
+							src='/logo.jpg'
 							alt='shodhLab Text Logo'
 							width={150}
 							height={48}
