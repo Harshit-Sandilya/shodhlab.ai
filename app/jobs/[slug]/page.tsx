@@ -8,7 +8,7 @@ export default async function Page({
 }: {
 	params: { slug: string };
 }) {
-	const { status, data } = await getJobData('ml-app');
+	const { status, data } = await getJobData(slug);
 
 	return (
 		<div className='w-full min-h-screen py-8 bg-black'>
