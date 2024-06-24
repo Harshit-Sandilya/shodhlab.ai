@@ -176,7 +176,7 @@ const DsJobForm = () => {
           />
 
           <label htmlFor="linkedin" className="my-2 text-neutral-500">
-            Name
+            LinkedIn Profile URL
           </label>
           <input
             type="text"
